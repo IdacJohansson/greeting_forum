@@ -21,8 +21,15 @@ public class Post {
 
     private String user;
     private String greeting;
-    private Instant date;
+    private String date;
     private String picture;
+
+    public Post(String user, String greeting, String date, String picture) {
+        this.user = user;
+        this.greeting = greeting;
+        this.date = date;
+        this.picture = picture;
+    }
 
     public Long getId() {
         return id;
@@ -40,11 +47,11 @@ public class Post {
         this.greeting = greeting;
     }
 
-    public Instant getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Instant date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
