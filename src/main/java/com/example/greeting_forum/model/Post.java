@@ -3,6 +3,7 @@ package com.example.greeting_forum.model;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -19,13 +20,13 @@ public class Post {
     @GeneratedValue
     private Long id;
 
-    private String user;
+    private String alias;
     private String greeting;
     private String date;
     private String picture;
 
-    public Post(String user, String greeting, String date, String picture) {
-        this.user = user;
+    public Post(String alias, String greeting, String date, String picture) {
+        this.alias = alias;
         this.greeting = greeting;
         this.date = date;
         this.picture = picture;
