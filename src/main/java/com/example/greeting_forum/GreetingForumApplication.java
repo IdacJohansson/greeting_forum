@@ -20,6 +20,8 @@ public class GreetingForumApplication {
 
 			Post p1 = new Post("Ida", "Hej hej", "2023-01-10", "bild");
 
+			postRepo.save(p1);
+
 		};
 	}
 
