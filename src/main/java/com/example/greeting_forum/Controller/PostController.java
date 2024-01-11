@@ -17,7 +17,6 @@ public class PostController {
 
     private final PostService postService;
 
-    @Autowired
     public PostController(PostService postService) {
         this.postService = postService;
     }
@@ -27,7 +26,7 @@ public class PostController {
         return postService.getAllPosts();
     }
 
-    @DeleteMapping("/{postId}")
+    @DeleteMapping("/delete/{postId}")
     public void deletePost(@PathVariable("postId") Long postId) {
         postService.deletePost(postId);
     }
@@ -35,7 +34,7 @@ public class PostController {
     @PostMapping("/add")
     public String addNewPost(@RequestBody Post p) {
         postService.addNewPost(p);
-        log.info("Post added with Alias: " + p.getUser() + "and Greeting: " + p.getGreeting());
+        log.info("Post added with Alias: " + p.getAlias() + "and Greeting: " + p.getGreeting());
         return "Post added!";
     }
 
