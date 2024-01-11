@@ -33,6 +33,7 @@ public class PostService {
         Post existingPost = postRepo.findPostById(postId);
         if (existingPost != null) {
             existingPost.setGreeting(updatedPost.getGreeting());
+            existingPost.setPicture(updatedPost.getPicture());
 
             postRepo.save(existingPost);
             return true;

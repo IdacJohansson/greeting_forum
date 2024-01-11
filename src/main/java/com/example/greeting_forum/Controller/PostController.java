@@ -39,13 +39,14 @@ public class PostController {
     }
 
     @PutMapping("/update/{postId}")
-    public String updatePost(@PathVariable("postId") Long postId, @RequestBody Post updatedPost) {
+    public String updatePosts(@PathVariable("postId") Long postId, @RequestBody Post updatedPost) {
         if (postService.updatePost(postId, updatedPost)) {
             return "Post updated";
         } else {
             return "Update failed!";
         }
-    }
+    } // updates greeting & picture
+
 }
 
 
