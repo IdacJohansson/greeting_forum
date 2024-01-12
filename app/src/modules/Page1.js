@@ -8,19 +8,22 @@ import "./All.css"
 function Page1() {
     const history = useHistory();
     const [text, setText] = useState(''); // Initialize text state
+    const [selectedImage, setSelectedImage] = useState(null); // Initialize selectedImage state
 
     const handleTextChange = (e) => {
         setText(e.target.value);
     };
 
-    const handleButtonClick = () => {
-        // Redirect to Page2 when "Post" button is clicked
-        history.push('/preview');
+    const handleImage = (image) => {
+        setSelectedImage(image);
     };
 
-    const handleImage = () => {
-        // Handle the new button click logic for pasting images here
-        console.log('Paste images logic');
+    const handleButtonClick = () => {
+        // Redirect to Page2 with text and selectedImage data
+        history.push({
+            pathname: '/preview',
+            state: { text, selectedImage },
+        });
     };
 
     return (
@@ -29,8 +32,7 @@ function Page1() {
             <Text value={text} onChange={handleTextChange}/>
             <br/>
             <ImageButton
-                onClick={handleImage}
-                imageSrc="greeting_forum/app/public/imageIcon.png"
+                onClick={() => handleImage('')}
             />
             <Button
                 onClick={handleButtonClick}

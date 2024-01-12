@@ -1,11 +1,11 @@
 import React from 'react';
 import './All.css';
+import imageIcon from "./imageIcon.png";
 
-const ImageButton = ({ onClick, label, imageSrc }) => {
+const ImageButton = ({ onClick }) => {
     return (
         <button className="image-button" onClick={onClick}>
-            {imageSrc && <img src={imageSrc} alt="icon" />}
-            {!imageSrc && label}
+            <img className="imageIcon" src={imageIcon} alt="icon" />
         </button>
     );
 };
