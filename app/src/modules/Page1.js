@@ -7,32 +7,28 @@ import "./All.css"
 
 function Page1() {
     const history = useHistory();
+    const [file, setFile] = useState()
     const [text, setText] = useState(''); // Initialize text state
-    const [selectedImage, setSelectedImage] = useState(null); // Initialize selectedImage state
 
     const handleTextChange = (e) => {
         setText(e.target.value);
     };
 
-    const handleImage = (image) => {
-        setSelectedImage(image);
-    };
 
     const handleButtonClick = () => {
         // Redirect to Page2 with text and selectedImage data
         history.push({
             pathname: '/preview',
-            state: { text, selectedImage },
+            state: { text, selectedImage: file },
         });
     };
 
     return (
         <div className="firstPage">
-            <h1>Första sidan</h1>
+            <h1>Create a post</h1>
             <Text value={text} onChange={handleTextChange}/>
             <br/>
             <ImageButton
-                onClick={() => handleImage('')}
             />
             <Button
                 onClick={handleButtonClick}

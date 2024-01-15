@@ -62,3 +62,7 @@
     align-items: center;
     margin-top: 20px;
 }
+
+h1 {
+    text-decoration: #22223b underline;
+}
