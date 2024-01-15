@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping("/posts")
 public class PostController {
@@ -30,6 +31,7 @@ public class PostController {
     public void deletePost(@PathVariable("postId") Long postId) {
         postService.deletePost(postId);
     }
+
 
     @PostMapping("/add")
     public String addNewPost(@RequestBody Post p) {
