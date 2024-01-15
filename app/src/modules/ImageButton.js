@@ -1,12 +1,21 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './All.css';
+import imageIcon from "./imageIcon.png";
 
-const ImageButton = ({ onClick, label, imageSrc }) => {
+const ImageButton = ({ onFileChange }) => {
+    const [file, setFile] = useState(null);
+
+    const handleFileChange = (event) => {
+        setFile(event.target.files[0]);
+        onFileChange(event);
+    };
+
     return (
-        <button className="image-button" onClick={onClick}>
-            {imageSrc && <img src={imageSrc} alt="icon" />}
-            {!imageSrc && label}
-        </button>
+        <div>
+            <button className="image-button" type="file" onClick={handleFileChange}>
+                <img className="imageIcon" src={imageIcon} alt="icon"/>
+            </button>
+        </div>
     );
 };
 
