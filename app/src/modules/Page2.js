@@ -5,18 +5,19 @@ import Text from "./Text";
 
 
 function Page2(props) {
-    const { text, selectedImage } = props.location.state || {};
+    const {alias, text, selectedImage } = props.location.state || {};
     const history = useHistory();
-    const [newText, setText] = useState(text || ''); // Initialize text state
+    const [newText, setText] = useState(text || '');
 
     const home = () => {
         history.push("/");
     };
 
     const handleButtonClick = () => {
-        // Redirect to Page2 with text and selectedImage data
         history.push({
             pathname: '/post',
+
+            //Post endpoint här
             state: { newText, selectedImage },
         });
     };
@@ -29,7 +30,19 @@ function Page2(props) {
         <div className="secondPage">
             <h1>Preview</h1>
             <h2>Want to edit your post?</h2>
-            <Text value={newText} onChange={handleTextChange} />
+
+            <div>
+                <label>Will be posted by: {alias}</label>
+            </div>
+
+
+            <Text value={newText} onChange={handleTextChange}/>
+
+            <div>
+                <label>Image:</label>
+                <img src={(selectedImage)} alt=" Cant show image"/>
+            </div>
+
             <Button
                 onClick={handleButtonClick}
                 text="Post"
@@ -37,4 +50,5 @@ function Page2(props) {
         </div>
     );
 }
+
 export default Page2;
