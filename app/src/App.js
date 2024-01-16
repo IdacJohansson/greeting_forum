@@ -8,8 +8,10 @@ import {
 import Page1 from "./modules/Page1";
 import Page2 from "./modules/Page2";
 import Page3 from "./modules/Page3";
+import Page4 from "./modules/Page4";
 import Navbar from "./modules/Navbar";
 import "./App.css"
+
 
 function App() {
     return (
@@ -32,6 +34,12 @@ function App() {
                             exact
                             path="/posts"
                             component={Page3}
+                        />
+
+                        <Route
+                            exact
+                            path="/test"
+                            component={Page4}
                         />
                     </Switch>
                 </Router>

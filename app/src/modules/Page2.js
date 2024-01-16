@@ -16,7 +16,7 @@ function Page2(props) {
     const handleButtonClick = () => {
         // Redirect to Page2 with text and selectedImage data
         history.push({
-            pathname: '/post',
+            pathname: '/posts',
             state: { newText, selectedImage },
         });
     };

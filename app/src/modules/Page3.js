@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
-import Axios from 'axios';
+import GreetingStream from "./GreetingStream";
+import React from "react";
 
 
 const fetchData = async () => {
@@ -7,22 +8,27 @@ const fetchData = async () => {
     return res.json();
 }
 
-
 const Page3 = () => {
 
-    const { data } = useQuery({queryKey:['posts'], queryFn: fetchData })
+    const { data, isPending, error } = useQuery({queryKey:['posts'], queryFn: fetchData })
+
+    if (isPending) return "Laoding..."
+    if (error) return `An error has occured!: ${error.message}`
+
+    const reversedData = data.slice().reverse();
 
     return (
         <>
-            <h1>Tredje sidan</h1>
+        <br/>
         <div className="thirdPage">
             <div className="box">
-            {data?.map((post) => (
-                <p> Alias: {post.alias} hälsning: {post.greeting}</p>
-                ))}
+                <div className="greetings">
+                    <h2>Greetings</h2>
+                </div>
+                <br/>
+                <GreetingStream posts={reversedData} />
             </div>
-
-            </div>
+        </div>
         </>
     );
 }
