@@ -15,13 +15,8 @@ function Page2(props) {
 
     const handleButtonClick = () => {
         history.push({
- greetingPost_component
             pathname: '/posts',
-
-           
-
             //Post endpoint här
- main
             state: { newText, selectedImage },
         });
     };
