@@ -77,21 +77,51 @@
 
 /*Greetings*/
 
-.thirdPage{
+.greetings{
+    font-family: "Andale Mono";
+    font-size: 30px;
+    text-decoration: none;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.greeting-thread {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: 0 auto;
+    overflow-y: auto; /* Lägg till en vertikal scrollbar när innehållet överstiger höjden */
+    max-height: 600px; /* Justera höjden efter dina önskemål */
+}
+
+.greeting-container {
+    border: 5px solid #ccc;
+    color: black;
+    margin-bottom: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.greeting-alias {
     display: flex;
     align-items: center;
-    justify-content: center;
-    height: 100vh;
-
+    margin-bottom: 5px;
 }
-.box{
-    background-color: lightgrey;
-    width: 300px;
-    border: 15px solid black;
-    padding: 50px;
-    margin: 20px;
 
+.bi-person {
+    font-size: 20px;
+    margin-right: 5px;
+    color: black;
 }
+
+.alias-info {
+    margin-left: 5px;
+}
+
+
 
 
 /* Andra sidan */
