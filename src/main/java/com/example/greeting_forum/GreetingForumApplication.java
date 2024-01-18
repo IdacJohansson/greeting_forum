@@ -7,6 +7,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
+import java.text.SimpleDateFormat;
+
 @SpringBootApplication
 public class GreetingForumApplication {
 
@@ -18,11 +20,16 @@ public class GreetingForumApplication {
 	public CommandLineRunner pojo(PostRepo postRepo){
 		return args -> {
 
-			Post p1 = new Post("Ida", "Hej hej", "2023-01-10", "bild");
+			Post p1 = new Post("Freyja", "Halló hoppa stökk", "2023-03-14", "bild");
+			Post p2 = new Post("Ida", "Hej hej", "2022-05-14",  "bild");
+			Post p3 = new Post("Hilla", "Hei hyppylaukka", "2024-01-14", "bild");
 
 			postRepo.save(p1);
-
+			postRepo.save(p2);
+			postRepo.save(p3);
 		};
+
+
 	}
 
 }

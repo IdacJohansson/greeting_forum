@@ -4,9 +4,8 @@ import './All.css';
 const Navbar = () => {
     return (
         <nav className="navbar">
-            <a href="/">Home</a>
-            <a herf="/test">Test</a>
-            <a href="/posts">Greetings</a>
+            <a href="/"><i className="bi bi-house">&nbsp;</i>Home</a>
+            <a href="/posts"><i className="bi bi-chat">&nbsp;</i>Greetings</a>
         </nav>
     );
 };
