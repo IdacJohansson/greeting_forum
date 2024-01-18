@@ -1,4 +1,4 @@
-import "./All.css"
+import './All.css'
 import React, { useEffect, useRef } from 'react';
 
 const Text = ({ value, onChange }) => {

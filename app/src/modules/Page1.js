@@ -25,27 +25,18 @@ function Page1() {
         if (selectedFile) {
             setFile(selectedFile);
 
-            // You can read the content of the file using FileReader and convert it to base64
             const reader = new FileReader();
-            reader.onloadend = () => {
-                // Do something with the base64-encoded image data
-                console.log(reader.result);
-            };
+            reader.onloadend = () => console.log(reader.result);
             reader.readAsDataURL(selectedFile);
         }
     };
 
     const handleButtonClick = () => {
-        // Redirect to Page2 with text and selectedImage data
         history.push({
             pathname: '/preview',
             state: {alias, text, selectedFile: file },
         });
     };
-
-
-
-    //Add alias prompt!
 
     return (
         <div className="firstPage">

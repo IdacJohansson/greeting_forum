@@ -6,7 +6,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @CrossOrigin(origins = "http://localhost:3000")
@@ -18,20 +17,16 @@ public class PostController {
 
     private final PostService postService;
 
-    public PostController(PostService postService) {
-        this.postService = postService;
-    }
+    @Autowired
+    public PostController(PostService postService) {this.postService = postService;}
 
     @GetMapping("/all")
-    public List<Post> getAllPosts() {
-        return postService.getAllPosts();
-    }
+    public List<Post> getAllPosts() {return postService.getAllPosts();}
 
     @DeleteMapping("/delete/{postId}")
     public void deletePost(@PathVariable("postId") Long postId) {
         postService.deletePost(postId);
     }
-
 
     @PostMapping("/add")
     public String addNewPost(@RequestBody Post p) {

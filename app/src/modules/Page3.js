@@ -12,8 +12,8 @@ const Page3 = () => {
 
     const { data, isPending, error } = useQuery({queryKey:['posts'], queryFn: fetchData })
 
-    if (isPending) return "Laoding..."
-    if (error) return `An error has occured!: ${error.message}`
+    if (isPending) return "Loading..."
+    if (error) return `An error has occurred!: ${error.message}`
 
     const reversedData = data.slice().reverse();
 

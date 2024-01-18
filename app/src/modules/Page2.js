@@ -33,7 +33,6 @@ function Page2(props) {
 
     const handleButtonClick = () => {
         newGreeting();
-
     };
 
     const handleTextChange = (e) => {
@@ -48,7 +47,6 @@ function Page2(props) {
             <div>
                 <label>Will be posted by: {alias}</label>
             </div>
-
 
             <Text value={newText} onChange={handleTextChange}/>
 
