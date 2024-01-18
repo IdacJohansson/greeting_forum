@@ -27,13 +27,13 @@ function Page2(props) {
     };
 
 
-
     const greetingPage3 = () => {
         history.push("/greetings");
     };
 
     const handleButtonClick = () => {
         newGreeting();
+
     };
 
     const handleTextChange = (e) => {
