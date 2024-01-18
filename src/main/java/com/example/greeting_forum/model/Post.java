@@ -22,6 +22,8 @@ public class Post {
 
     private String alias;
     private String greeting;
+    //private SimpleDateFormat date = new SimpleDateFormat("yyyy-MM-dd");
+
     private String date;
     private String picture;
 

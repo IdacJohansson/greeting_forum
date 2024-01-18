@@ -43,11 +43,16 @@ function Page1() {
         });
     };
 
+
+
     //Add alias prompt!
 
     return (
         <div className="firstPage">
-            <h1>Create a post</h1>
+            <div className="createGreeting">
+                <h2>Create a greeting</h2>
+            </div>
+            <br/>
             <input type="text" value={alias} onChange={handleAliasChange} placeholder="Enter alias" />
             <Text value={text} onChange={handleTextChange}/>
             <br/>
